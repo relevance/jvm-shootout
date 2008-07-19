@@ -1,0 +1,22 @@
+JVM Language Shootout
+I am using this project to compare various JVM languages, including Clojure, Fan, Groovy, Ruby, and Scala. 
+Stuart Halloway
+stu AT think relevance DOT com
+
+Presentation is Creative Commons, 
+
+Some concepts I will be exploring:
+* everything is an object
+* convenient operators
+* convenient Strings
+* runtime type safety
+* convenient Arrays
+* convenient Maps
+* functional arguments / closures
+* ranges
+* everything returns a value
+* object-oriented case statements
+* low-ceremony property definitions
+* roll-your-own constructs
+* helpful exceptions
+
