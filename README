@@ -3,9 +3,7 @@ I am using this project to compare various JVM languages, including Clojure, Fan
 Stuart Halloway
 stu AT think relevance DOT com
 
-Presentation is Creative Commons, 
-
-Some concepts I will be exploring:
+Common ground between the languages:
 * everything is an object
 * convenient operators
 * convenient Strings
@@ -19,4 +17,22 @@ Some concepts I will be exploring:
 * low-ceremony property definitions
 * roll-your-own constructs
 * helpful exceptions
+* relaxed syntax
+
+Unique features:
+* Ruby metaprogramming
+* Ruby modules
+* Clojure macros
+* Clojure STM
+* Clojure multiple dispatch
+* Clojure type hints
+* Scala implicit coercion
+* Scala for expressions
+* Scala pattern matching
+* Scala traits
+* Scala Vars and vals
+
+Other topics
+* Coding without side effects
+
 
