@@ -1,0 +1,3 @@
+Use tuple instead of Array in tokenize?
+or maybe Set()
+
