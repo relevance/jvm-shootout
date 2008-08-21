@@ -1,26 +1,19 @@
-# Import Java packages
 include Java
-
 import javax.swing.JFrame
+import javax.swing.JButton
+import javax.swing.JOptionPane
+import java.awt.event.ActionListener
 
-frame = JFrame.new("Hello Swing")
-button = javax.swing.JButton.new("Click Me")
-
-class ClickAction 
-  include java.awt.event.ActionListener
-  def actionPerformed(evt)
-    javax.swing.JOptionPane.showMessageDialog(nil, <<EOS)
-<html>Hello from <b><u>JRuby</u></b>.<br> 
+button = JButton.new "Click Me"
+button.add_action_listener do |evt|
+  JOptionPane.showMessageDialog(nil, <<-END)
+<html>Hello from <b>JRuby</b>.
 Button '#{evt.getActionCommand()}' clicked.
-EOS
-  end
+END
 end
-button.add_action_listener(ClickAction.new)
 
-# Add the button to the frame
-frame.get_content_pane.add(button)
-
-# Show frame
-frame.set_default_close_operation(JFrame::EXIT_ON_CLOSE)
+frame = JFrame.new "Hello Swing"
+frame.content_pane.add button
+frame.default_close_operation = JFrame::EXIT_ON_CLOSE
 frame.pack
 frame.visible = true

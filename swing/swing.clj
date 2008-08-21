@@ -1,17 +1,22 @@
 (import '(javax.swing JFrame JButton JOptionPane))
 (import '(java.awt.event ActionListener))
 
-(def frame (new JFrame "Hello Swing"))
-(def button (new JButton "Click Me"))
+(let [frame (new JFrame "Hello Swing")
+      button (new JButton "Click Me")]
+  (.addActionListener 
+   button
+   (proxy [ActionListener] []
+     (actionPerformed 
+      [evt]
+      (.showMessageDialog 
+       JOptionPane 
+       nil, 
+       (str "<html>Hello from <b>Clojure</b>.<br/> Button " (.getActionCommand evt) " clicked.")))))
 
-(.addActionListener button (proxy [ActionListener] []
-			     (actionPerformed [evt]
-					      (.showMessageDialog JOptionPane nil, "foo"))))
-
-(.. frame (getContentPane) (add button))
-(doto frame
-  (setDefaultCloseOperation (. JFrame EXIT_ON_CLOSE))
-  (pack)
-  (setVisible true))
+  (.. frame (getContentPane) (add button))
+  (doto frame
+    (setDefaultCloseOperation (. JFrame EXIT_ON_CLOSE))
+    (pack)
+    (setVisible true)))
 					      
 
