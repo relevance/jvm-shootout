@@ -1,4 +1,0 @@
-Clojure methods don't do the -1 trick for sub/slice/etc.
-Clojure allows commas in the read syntax for mappings
-  (more generally, commas seem to be just ignored)
-
