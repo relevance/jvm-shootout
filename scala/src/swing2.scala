@@ -1,7 +1,7 @@
 import javax.swing._
 import java.awt.event.{ActionEvent, ActionListener}
  
-object HelloWorld extends JFrame("Hello Swing") {
+object HelloWorld2 extends JFrame("Hello Swing") {
   def showButtonMessage(msg: String)  =
     JOptionPane.showMessageDialog(null, String.format("""<html>Hello from <b>Scala</b>. Button %s pressed""", Array(msg)));
  
