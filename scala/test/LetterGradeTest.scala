@@ -1,13 +1,17 @@
 import org.scalatest.Suite
 
 class LetterGradeSuite extends Suite {
-  def testNumericInput() {
+  def testIntInput() {
     assert("A" === LetterGradeWithGuard.letterGrade(95))
     assert("B" === LetterGradeWithGuard.letterGrade(85))
     assert("C" === LetterGradeWithGuard.letterGrade(75))
     assert("D" === LetterGradeWithGuard.letterGrade(65))
     assert("F" === LetterGradeWithGuard.letterGrade(35))
   }
+
+//  def testFloatInputDoesntWork() {
+//    assert("A" === LetterGradeWithGuard.letterGrade(95.5))
+//  }
 
   def testLetterInput() {
     assert("A" == LetterGradeWithGuard.letterGrade("A"))
@@ -29,6 +33,10 @@ class LetterGradeSuite extends Suite {
   def testLetterInputOnExtractor() {
     assert("A" === LetterGrade2.letterGrade("A"))
     assert("A" === LetterGrade2.letterGrade("a"))
+  }
+
+  def testNumericInputOnRangeExtractor() {
+    assert("A" === LetterGrade2.letterGrade(95))
   }
 
 }
