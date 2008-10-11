@@ -4,12 +4,8 @@
 (defn green [v] (struct color 0 v 0))
 (defn blue [v] (struct color 0 0 v))
 
-(defn keys-with-value-matching [map test-fn]
-     (for [pair (map identity map) :when (test-fn (last pair))] 
-       (first pair)))
-
 (defn basic-colors-in [color]
-  (keys-with-value-matching color (comp not zero?)))
+  (for [[k v] color :when (not= v 0)] k))
 
 (defmulti color-string basic-colors-in)
 (defmethod color-string [:red] [color] (str "Red: " (:red color)))

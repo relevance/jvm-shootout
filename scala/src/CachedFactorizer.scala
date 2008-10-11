@@ -4,19 +4,20 @@ import java.math.BigInteger
 import java.util.concurrent.atomic.AtomicLong
 
 class CachedFactorizer {
+  case class Cache(val n: Int, val factors: List[Int])
   val hits = new AtomicLong()
-  val cache = new AtomicReference(2, calculateFactors(2))
+  val cache = new AtomicReference[Cache](Cache(2, calculateFactors(2)))
   val cacheHits = new AtomicLong()
 
   def factor(n: Int) = {
     hits.incrementAndGet
     val cached = cache.get
-    if (cached._1 == n) {
+    if (cached.n == n) {
       cacheHits.incrementAndGet
-      cached._2
+      cached.factors
     } else {
       val factors = calculateFactors(n)
-      cache.set(2, factors)
+      cache.set(Cache(n, factors))
       factors
     }
   }
