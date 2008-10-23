@@ -13,5 +13,3 @@
 (defmethod color-string [:blue] [color] (str "Blue: " (:blue color)))
 (defmethod color-string :default [color] 
   (str "Red: " (:red color) ", Green: " (:green color) ", Blue: " (:blue color)))
-
-
