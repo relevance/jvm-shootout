@@ -12,7 +12,7 @@ public class Swing {
     button.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         JOptionPane.showMessageDialog(null,
-            String.format("<html>Hello from <b>Scala</b>" +
+            String.format("<html>Hello from <b>Java</b>" +
                           "Button %s pressed", event.getActionCommand()));
       }
     });
