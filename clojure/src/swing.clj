@@ -8,15 +8,16 @@
    (proxy [ActionListener] []
      (actionPerformed 
       [evt]
-      (.showMessageDialog 
-       JOptionPane 
+      (JOptionPane/showMessageDialog 
        nil, 
-       (str "<html>Hello from <b>Clojure</b>.<br/> Button " (.getActionCommand evt) " clicked.")))))
+       (str "<html>Hello from <b>Clojure</b>.<br/> Button "
+            (.getActionCommand evt)
+            " clicked.")))))
 
   (.. frame (getContentPane) (add button))
   (doto frame
-    (setDefaultCloseOperation (. JFrame EXIT_ON_CLOSE))
-    (pack)
-    (setVisible true)))
+    (.setDefaultCloseOperation JFrame/EXIT_ON_CLOSE)
+    .pack
+    (.setVisible true)))
 					      
 
